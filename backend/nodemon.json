@@ -1,0 +1,17 @@
+{
+  "watch": [
+    "*/*.js",
+    "bin/www"
+  ],
+  "ignore": [
+    "public",
+    "ecosystem.config.js",
+    "eslintrc.js"
+  ],
+  "env": {
+    "IS_DEV": true,
+    "DEBUG": "wishquest*",
+    "PORT": "11011",
+    "STORAGE": "D:\\.myworld\\wish-quest\\backend\\storage"
+  }
+}
