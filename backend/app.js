@@ -7,14 +7,19 @@ import ejs from 'ejs'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 
-import { router } from './routes/index.js'
-import { LowDB } from './lowdb/index.js'
+import { MapperLowDB } from './lowdb/index.js'
+import { Service } from './service/index.js'
+import { Controller } from './controller/index.js'
+import { Router } from './routes/index.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 export async function createApp () {
-  const db = await LowDB()
-  const app = express()
+  const mapper = await MapperLowDB()
+  const service = Service(mapper)
+  const controller = Controller(service)
+  const router = Router(controller)
 
+  const app = express()
   // view engine setup
   app.set('views', path.join(__dirname, 'public'))
   app.set('view engine', 'ejs')
