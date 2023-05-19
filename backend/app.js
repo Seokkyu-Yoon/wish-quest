@@ -10,14 +10,14 @@ import logger from 'morgan'
 import { MapperLowDB } from './lowdb/index.js'
 import { Service } from './service/index.js'
 import { Controller } from './controller/index.js'
-import { Router } from './routes/index.js'
+import { Routes } from './routes/index.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 export async function createApp () {
   const mapper = await MapperLowDB()
   const service = Service(mapper)
   const controller = Controller(service)
-  const router = Router(controller)
+  const routes = Routes(controller)
 
   const app = express()
   // view engine setup
@@ -32,6 +32,6 @@ export async function createApp () {
   app.use(cookieParser())
   app.use(express.static(path.join(__dirname, 'public')))
 
-  app.use('/', router)
+  app.use('/', routes)
   return app
 }

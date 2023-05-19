@@ -1,5 +1,5 @@
 const TABLE_NAME = 'work'
-export function Work (schema) {
+export function MapperWork (schema) {
   const data = schema.get(TABLE_NAME)
   function findIdxByIds (id) {
     return data.findIndex(savedWork => savedWork.id === id)

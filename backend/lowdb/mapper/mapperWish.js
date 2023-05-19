@@ -1,5 +1,5 @@
 const TABLE_NAME = 'wish'
-export function Wish (schema) {
+export function MapperWish (schema) {
   const data = schema.get(TABLE_NAME)
   function findIdxByIds (cId, userId, wishAt) {
     return data.findIndex(savedWish => {

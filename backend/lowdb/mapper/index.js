@@ -1,19 +1,19 @@
-import { Chat } from './chat.js'
-import { Connect } from './connect.js'
-import { ConnectUser } from './connectUser.js'
-import { Reward } from './reward.js'
-import { User } from './user.js'
-import { Wish } from './wish.js'
-import { Work } from './work.js'
+import { MapperChat } from './mapperChat.js'
+import { MapperConnection } from './mapperConnection.js'
+import { MapperConnectionUser } from './mapperConnectionUser.js'
+import { MapperReward } from './mapperReward.js'
+import { MapperUser } from './mapperUser.js'
+import { MapperWish } from './mapperWish.js'
+import { MapperWork } from './mapperWork.js'
 
 export function Mapper (schema) {
   return Object.freeze({
-    chat: Chat(schema),
-    connect: Connect(schema),
-    ConnectUser: ConnectUser(schema),
-    reward: Reward(schema),
-    user: User(schema),
-    wish: Wish(schema),
-    work: Work(schema)
+    chat: MapperChat(schema),
+    connection: MapperConnection(schema),
+    ConnectionUser: MapperConnectionUser(schema),
+    reward: MapperReward(schema),
+    user: MapperUser(schema),
+    wish: MapperWish(schema),
+    work: MapperWork(schema)
   })
 }

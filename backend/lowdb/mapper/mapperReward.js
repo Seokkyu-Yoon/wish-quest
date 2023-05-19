@@ -1,5 +1,5 @@
 const TABLE_NAME = 'reward'
-export function Reward (schema) {
+export function MapperReward (schema) {
   const data = schema.get(TABLE_NAME)
   function findIdxByIds (cId, userId, rewardAt) {
     return data.findIndex(savedReward => {

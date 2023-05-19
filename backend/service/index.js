@@ -1,9 +1,11 @@
-import { Debug } from '../debug/index.js'
+import { ServiceSign } from './serviceSign.js'
+import { ServiceUser } from './serviceUser.js'
+import { ServiceConnection } from './serviceConnection.js'
 
-const debug = Debug('service:index')
 export function Service (mapper) {
-  // debug(mapper)
   return Object.freeze({
-
+    sign: ServiceSign(mapper.user),
+    connection: ServiceConnection(mapper.connection, mapper.connectionUser),
+    user: ServiceUser(mapper.user, mapper.connection)
   })
 }

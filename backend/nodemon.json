@@ -9,6 +9,7 @@
     "eslintrc.js"
   ],
   "env": {
+    "env": "development",
     "IS_DEV": true,
     "DEBUG": "wishquest*",
     "PORT": "11011",

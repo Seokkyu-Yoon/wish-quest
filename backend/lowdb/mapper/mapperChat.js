@@ -1,5 +1,5 @@
 const TABLE_NAME = 'chat'
-export function Chat (schema) {
+export function MapperChat (schema) {
   const data = schema.get(TABLE_NAME)
   function findIdxByIds (cId, userId, writeAt) {
     return data.findIndex(chat => {
