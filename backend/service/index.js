@@ -5,7 +5,7 @@ import { ServiceConnection } from './serviceConnection.js'
 export function Service (mapper) {
   return Object.freeze({
     sign: ServiceSign(mapper.user),
-    connection: ServiceConnection(mapper.connection, mapper.connectionUser),
-    user: ServiceUser(mapper.user, mapper.connection)
+    user: ServiceUser(mapper.user, mapper.connection),
+    connection: ServiceConnection(mapper.connection, mapper.connectionUser)
   })
 }
